@@ -1,0 +1,65 @@
+import random
+
+def roll_random(low, high):
+    return random.randint(low,high)
+#this function will be used to help other functions
+
+def card_suit():
+    number=roll_random(1,100)
+    if number >= 1 and number <= 25:
+        return("Hearts")
+    elif number >=26 and number <= 50:
+        return("Clubs")
+    elif number >=51 and number <= 75:
+        return("Diamonds")
+    else:
+        return("Spades")
+#this function outputs the suit of the card
+def card_face():
+    number=roll_random(1,10)
+    if number == 1:
+        return("Ace")
+    elif number == 2:
+        return("Two")
+    elif number == 3:
+        return("Three")
+    elif number == 4:
+        return("Four")
+    elif number == 5:
+        return("Five")
+    elif number == 6:
+        return("Six")
+    elif number == 7:
+        return("Seven")
+    elif number == 8:
+        return("Eight")
+    elif number == 9:
+        return("Nine")
+    else:
+        return(royal())
+#this function outputs the face of the card
+def royal():
+    number=roll_random(1,4)
+    if number == 1:
+        return("Ten")
+    elif number == 2:
+        return("Jack")
+    elif number == 3:
+        return("Queen")
+    else:
+        return("King")
+#this function will be used when card_face() rolls a 10
+
+def draw_card():        
+    num = random.randint(1,100)
+    if num <= 98:
+        face = card_face()
+        suit=card_suit()
+        return("You have drawn the " + card_face() + " of " + card_suit())
+    else:
+        return("You have drawn a Joker")
+#there is a 2% chance of drawing a Joker card
+#call the function
+
+print(draw_card())
+    
