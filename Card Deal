@@ -53,13 +53,16 @@ def royal():
 def draw_card():        
     num = random.randint(1,100)
     if num <= 98:
-        face = card_face()
-        suit=card_suit()
         return("You have drawn the " + card_face() + " of " + card_suit())
     else:
         return("You have drawn a Joker")
 #there is a 2% chance of drawing a Joker card
-#call the function
 
-print(draw_card())
+response = input("Do you want to draw a card? (Yes or No) \n")
+if response == "Yes":
+    print(draw_card())
+else:
+    None
+
+#user inputs if they want to draw a card or not
     
